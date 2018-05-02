@@ -1,0 +1,22 @@
+
+create database projeto_cep;
+use projeto_cep;
+
+create table estados(sigla varchar(2), nome varchar(255))engine=InnoDB charset=utf8;
+alter table estados add primary key (sigla);
+alter table estados modify sigla varchar(2) not null;
+alter table estados modify nome varchar(255) unique;
+alter table estados modify nome varchar(255) not null; 
+
+create table cidades(id bigint auto_increment, nome varchar(255) not null, cep varchar(9) unique, estado_sigla varchar(2), primary key(id, estado_sigla))engine=InnoDB charset=utf8;
+
+create table bairros(id bigint auto_increment, nome varchar(255) not null, cidade_id bigint, primary key(id, cidade_id))engine=InnoDB charset=utf8;
+
+create table logradouros(id bigint auto_increment, nome varchar(255) not null, cep varchar(9) not null unique, complemento varchar(255), bairro_id bigint, primary key (id, bairro_id))engine=InnoDB charset=utf8;
+
+
+alter table cidades add constraint fk_estado_sigla foreign key (estado_sigla) references estados (sigla) on delete cascade on update cascade;
+
+alter table bairros add constraint fk_cidade_id foreign key (cidade_id) references cidades (id) on delete cascade on update cascade;
+
+alter table logradouros add constraint fk_bairros_id foreign key (bairro_id) references bairros (id) on delete cascade on update cascade;
