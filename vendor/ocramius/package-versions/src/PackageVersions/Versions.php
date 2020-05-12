@@ -14,7 +14,7 @@ use OutOfBoundsException;
  */
 final class Versions
 {
-    public const ROOT_PACKAGE_NAME = 'symfony/website-skeleton';
+    public const ROOT_PACKAGE_NAME = '__root__';
     /**
      * Array of all available composer packages.
      * Dont read this array from your calling code, but use the \PackageVersions\Versions::getVersion() method instead.
@@ -130,14 +130,15 @@ final class Versions
   'symfony/profiler-pack' => 'v1.0.4@99c4370632c2a59bb0444852f92140074ef02209',
   'symfony/test-pack' => 'v1.0.6@ff87e800a67d06c423389f77b8209bc9dc469def',
   'symfony/web-profiler-bundle' => 'v5.0.8@67fc2302ba7ca3d917decea6d3accdbd055398d1',
-  'paragonie/random_compat' => '2.*@',
-  'symfony/polyfill-ctype' => '*@',
-  'symfony/polyfill-iconv' => '*@',
-  'symfony/polyfill-php72' => '*@',
-  'symfony/polyfill-php71' => '*@',
-  'symfony/polyfill-php70' => '*@',
-  'symfony/polyfill-php56' => '*@',
-  'symfony/website-skeleton' => 'v5.0.99@',
+  'symfony/web-server-bundle' => 'v4.4.8@a7fc347f104cf763c7bae568902223e5f918af9e',
+  'paragonie/random_compat' => '2.*@f9ab389f42337fd7668169261b9f90ebe13a7684',
+  'symfony/polyfill-ctype' => '*@f9ab389f42337fd7668169261b9f90ebe13a7684',
+  'symfony/polyfill-iconv' => '*@f9ab389f42337fd7668169261b9f90ebe13a7684',
+  'symfony/polyfill-php72' => '*@f9ab389f42337fd7668169261b9f90ebe13a7684',
+  'symfony/polyfill-php71' => '*@f9ab389f42337fd7668169261b9f90ebe13a7684',
+  'symfony/polyfill-php70' => '*@f9ab389f42337fd7668169261b9f90ebe13a7684',
+  'symfony/polyfill-php56' => '*@f9ab389f42337fd7668169261b9f90ebe13a7684',
+  '__root__' => 'dev-master@f9ab389f42337fd7668169261b9f90ebe13a7684',
 );
 
     private function __construct()
